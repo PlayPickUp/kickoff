@@ -1,0 +1,72 @@
+{
+  "name": "expugrea",
+  "version": "0.0.1",
+  "description": "Expugrea is a starting point for Express, Pug, and React",
+  "main": "index.js",
+  "repository": "git@github.com:erwstout/expugrea.git",
+  "author": "Eric Stout <ericwstout@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "yarn clean && yarn test && yarn format && yarn build:express && yarn build:react",
+    "build:express": "tsc --project ./tsconfig.json && node scripts/express-structure.js",
+    "build:react": "webpack --config webpack.prod.js",
+    "clean": "node ./scripts/clean-dist.js",
+    "format": "prettier \"./src/**/*\" --write",
+    "start": "nf run nodemon ./src/index.ts",
+    "test": "yarn test:ts && yarn test:lint && yarn test:format",
+    "test:format": "prettier \"./src/**/*\" --check",
+    "test:lint": "eslint .",
+    "test:ts": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test",
+      "pre-push": "yarn test"
+    }
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "chalk": "^3.0.0",
+    "express": "^4.17.1",
+    "fs-extra": "^8.1.0",
+    "prompts": "^2.3.0",
+    "pug": "^2.0.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "ts-node": "^8.5.4",
+    "util": "^0.12.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@types/express": "^4.17.2",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.2",
+    "del": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.17.0",
+    "foreman": "^3.0.1",
+    "husky": "^3.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ]
+  }
+}
