@@ -1,10 +1,9 @@
 .DS_Store
-*.log
+logs
 error_log
-
+*.log
 node_modules
-
-build/
-dist/
-
-
+.cache
+build
+dist
+.env
