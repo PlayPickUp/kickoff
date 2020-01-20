@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 const fs = require("fs-extra");
 const chalk = require("chalk");
-const util = require("util");
-const exec = util.promisify(require("child_process").exec);
+const spawn = require("child_process").spawn;
+const path = require("path");
 
 const [, , ...project] = process.argv;
+
+const errorMessage = chalk.red(
+  "🚨  It seems something has gone wrong. Report issues here 👉 https://github.com/erwstout/expugrea/issues"
+);
 
 const createDirectory = async () => {
   try {
@@ -12,33 +16,90 @@ const createDirectory = async () => {
     console.log(chalk.green("📁  Project directory created successfully!"));
   } catch (err) {
     console.error(err);
+    console.log(errorMessage);
   }
 };
 
-const navigatetoDirectory = async () => {
-  const directory = project;
+const setupProjectFiles = async () => {
+  const configFiles = [
+    ".babelrc",
+    ".browserslistrc",
+    ".env",
+    ".eslintignore",
+    ".eslintrc.json",
+    ".prettierignore",
+    ".prettierrc",
+  ];
+
   try {
-    // await fs.promises.opendir(...directory);
-    // console.log(dir);
-    // exec(`cd ${directory[0]}`);
-    // exec("touch test.md")
-    exec("git status", { cwd: "/Users/eric.stout/repos/expugrea" });
-  } catch (err) {
-    console.error(err);
+    await process.chdir(...project);
+
+    await fs.copy(path.resolve(__dirname, "../lib"), ".");
+
+    for (let index = 0; index < configFiles.length; index++) {
+      fs.createReadStream(
+        path.join(__dirname, `../lib/${configFiles[index]}`)
+      ).pipe(fs.createWriteStream(`${configFiles[index]}`));
+    }
+
+    const gitIgnore = `
+build
+dist
+.cache
+.DS_Store
+node_modules
+.env
+    `;
+
+    await fs.writeFileSync(".gitignore", gitIgnore, err => {
+      if (err) {
+        console.error(err);
+        console.log(errorMessage);
+      }
+      return;
+    });
+
+    console.log(chalk.green("✅  Project files copied successfully!"));
+  } catch (error) {
+    console.error(error);
+    console.log(errorMessage);
   }
 };
 
-async function lsExample() {
-  const { stdout, stderr } = await exec("cd hello-world && touch hey.md", {
-    cwd: "./"
+const installProject = async () => {
+  console.log(chalk.yellow("⏳  Installing project dependencies via yarn..."));
+  const yarn = spawn("yarn", ["install"]);
+  yarn.stdout.on("data", data => {
+    console.log(chalk.blue(data.toString()));
   });
-  console.log("stdout:", stdout);
-  console.error("stderr:", stderr);
-}
+
+  yarn.stderr.on("data", data => {
+    console.log(chalk.blue(data.toString()));
+  });
+
+  yarn.on("error", err => {
+    console.error(err);
+    console.log(errorMessage);
+  });
+
+  yarn.on("exit", code => {
+    if (code === 0) {
+      console.log(chalk.green("💯  Project dependencies installed!"));
+      console.log(
+        chalk.cyanBright(
+          "👩‍💻  Happy hacking! Issues? Questions? https://github.com/erwstout/expugrea/issues  👨‍💻"
+        )
+      );
+      console.log(`⚡️  To get started, type cd ${project.toString()}`);
+      return;
+    }
+    console.log(errorMessage);
+    return console.log("Child process exited with code " + code.toString());
+  });
+};
 
 (async () => {
   await createDirectory();
-  await lsExample();
-  // exec("cd hello-world");
-  // await navigatetoDirectory();
+  await setupProjectFiles();
+  await installProject();
 })();
