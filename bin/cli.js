@@ -48,7 +48,6 @@ dist
 .cache
 .DS_Store
 node_modules
-.env
     `;
 
     await fs.writeFileSync(".gitignore", gitIgnore, err => {
