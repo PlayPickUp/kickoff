@@ -24,7 +24,6 @@ const setupProjectFiles = async () => {
   const configFiles = [
     ".babelrc",
     ".browserslistrc",
-    ".env",
     ".eslintignore",
     ".eslintrc.json",
     ".prettierignore",
@@ -48,6 +47,7 @@ dist
 .cache
 .DS_Store
 node_modules
+.env
     `;
 
     await fs.writeFileSync(".gitignore", gitIgnore, err => {
