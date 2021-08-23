@@ -13,12 +13,6 @@
     "test:format": "prettier \"./bin/**/*\" --check",
     "test:lint": "eslint ."
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test",
-      "pre-push": "yarn test"
-    }
-  },
   "dependencies": {
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0"
