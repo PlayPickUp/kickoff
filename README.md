@@ -1,6 +1,5 @@
 # expugrea
 
-[![Build Status](https://semaphoreci.com/api/v1/erwstout/expugrea/branches/master/badge.svg)](https://semaphoreci.com/erwstout/expugrea)
 ![npm](https://img.shields.io/npm/v/expugrea?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/erwstout/expugrea?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/erwstout/expugrea?style=flat-square)
