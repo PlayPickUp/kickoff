@@ -11,7 +11,8 @@
     "format": "prettier \"./bin/**/*\" --write",
     "test": "yarn test:lint && yarn test:format",
     "test:format": "prettier \"./bin/**/*\" --check",
-    "test:lint": "eslint ."
+    "test:lint": "eslint .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "chalk": "^4.1.2",

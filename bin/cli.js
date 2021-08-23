@@ -50,7 +50,7 @@ node_modules
 .env
     `;
 
-    await fs.writeFileSync(".gitignore", gitIgnore, err => {
+    await fs.writeFileSync(".gitignore", gitIgnore, (err) => {
       if (err) {
         console.error(err);
         console.log(errorMessage);
@@ -68,20 +68,20 @@ node_modules
 const installProject = async () => {
   console.log(chalk.yellow("⏳  Installing project dependencies via yarn..."));
   const yarn = spawn("yarn", ["install"]);
-  yarn.stdout.on("data", data => {
+  yarn.stdout.on("data", (data) => {
     console.log(chalk.blue(data.toString()));
   });
 
-  yarn.stderr.on("data", data => {
+  yarn.stderr.on("data", (data) => {
     console.log(chalk.blue(data.toString()));
   });
 
-  yarn.on("error", err => {
+  yarn.on("error", (err) => {
     console.error(err);
     console.log(errorMessage);
   });
 
-  yarn.on("exit", code => {
+  yarn.on("exit", (code) => {
     if (code === 0) {
       console.log(chalk.green("💯  Project dependencies installed!"));
       console.log(
