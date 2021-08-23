@@ -7,6 +7,9 @@
   "author": "Eric Stout <ericwstout@gmail.com>",
   "license": "MIT",
   "private": false,
+  "bin": {
+    "expugrea": "./bin/cli.js"
+  },
   "scripts": {
     "format": "prettier \"./bin/**/*\" --write",
     "test": "yarn test:lint && yarn test:format",
