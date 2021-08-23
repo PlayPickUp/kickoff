@@ -1,8 +1,8 @@
 # expugrea
 
 ![npm](https://img.shields.io/npm/v/expugrea?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/erwstout/expugrea?style=flat-square)
-![GitHub](https://img.shields.io/github/license/erwstout/expugrea?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/PlayPickup/expugrea?style=flat-square)
+![GitHub](https://img.shields.io/github/license/PlayPickup/expugrea?style=flat-square)
 
 #### 📍 Expugrea is a starting point for Express, Pug, and React.
 
@@ -22,4 +22,4 @@ It will then take care of setting up Express, Pug, and React for you.
 
 ## 🙋🏾‍♀️ Need help?
 
-Feel free to [open an issue](https://github.com/erwstout/expugrea/issues)
+Feel free to [open an issue](https://github.com/PlayPickup/expugrea/issues)
