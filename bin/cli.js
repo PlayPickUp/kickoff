@@ -23,7 +23,6 @@ const createDirectory = async () => {
 
 const setupProjectFiles = async () => {
   const configFiles = [
-    ".babelrc",
     ".browserslistrc",
     ".eslintignore",
     ".eslintrc.json",
