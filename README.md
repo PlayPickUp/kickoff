@@ -6,6 +6,8 @@
 
 #### 📍 Expugrea is a starting point for Express, Pug, and React.
 
+> We are changing the name of this repo to Kickoff. Get ready.
+
 Expugrea is similar to Create React App, where you can easily get a project up and running without the trouble of configuring the same things over and over again.
 
 ---
