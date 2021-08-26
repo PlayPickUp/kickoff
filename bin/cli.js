@@ -44,6 +44,7 @@ const setupProjectFiles = async () => {
         return;
       }
       console.log(`stdout: ${stdout}`);
+      console.log(chalk.green("✅  Git initialized!"));
     });
 
     await fs.copy(path.resolve(__dirname, "../lib"), ".");
