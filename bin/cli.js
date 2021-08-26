@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require("fs-extra");
 const chalk = require("chalk");
+const { exec } = require("child_process");
 const spawn = require("child_process").spawn;
 const path = require("path");
 
@@ -31,7 +32,19 @@ const setupProjectFiles = async () => {
   ];
 
   try {
-    await process.chdir(...project);
+    process.chdir(...project);
+
+    exec("git init", (error, stdout, stderr) => {
+      if (error) {
+        console.error(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    });
 
     await fs.copy(path.resolve(__dirname, "../lib"), ".");
 
@@ -50,7 +63,7 @@ node_modules
 .env
     `;
 
-    await fs.writeFileSync(".gitignore", gitIgnore, (err) => {
+    fs.writeFileSync(".gitignore", gitIgnore, (err) => {
       if (err) {
         console.error(err);
         console.log(errorMessage);
@@ -59,6 +72,7 @@ node_modules
     });
 
     console.log(chalk.green("✅  Project files copied successfully!"));
+    fs.cm;
   } catch (error) {
     console.error(error);
     console.log(errorMessage);

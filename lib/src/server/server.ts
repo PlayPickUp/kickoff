@@ -16,7 +16,7 @@ app.get("/api/hello", (req: Request, res: Response) =>
   res.json({ message: "Hello, World!" })
 );
 
-app.use((req, res, next) => {
+app.use((req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
