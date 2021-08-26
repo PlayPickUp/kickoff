@@ -42,7 +42,6 @@ const setupProjectFiles = async () => {
         console.log(`stderr: ${stderr}`);
         return;
       }
-      console.log(`stdout: ${stdout}`);
       console.log(chalk.green("✅  Git initialized!"));
     });
 
