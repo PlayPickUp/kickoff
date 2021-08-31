@@ -1,5 +1,7 @@
 # **_@playpickup/kickoff_**
 
+![GitHub issues](https://img.shields.io/github/issues/playpickup/kickoff?style=flat-square)
+
 **_🏈 Kickoff is a (pretty) un-opinionated starting point for Node/Express/React projects_**. It is similar to projects like Create React App, where you can easily get a project up and running without the trouble of configuring the same tools over and over again. It lets you focus on the work that matters.
 
 ---
