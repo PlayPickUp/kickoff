@@ -11,7 +11,7 @@
     "test:eslint": "eslint .",
     "test:typescript": "tsc -p ./tsconfig.json --noEmit",
     "prepare": "husky install",
-    "postinstall": "npx husky add .husky/pre-commit \"yarn test\" && npx husky add .husky/pre-push \"yarn test\""
+    "postinstall": "husky install && npx husky add .husky/pre-commit \"yarn test\" && npx husky add .husky/pre-push \"yarn test\""
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
