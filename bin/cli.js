@@ -8,7 +8,7 @@ const path = require("path");
 const [, , ...project] = process.argv;
 
 const errorMessage = chalk.red(
-  "🚨  It seems something has gone wrong. Report issues here 👉 https://github.com/PlayPickup/expugrea/issues"
+  "🚨  It seems something has gone wrong. Report issues here 👉 https://github.com/PlayPickup/kickoff/issues"
 );
 
 const createDirectory = async () => {
@@ -99,7 +99,7 @@ const installProject = async () => {
       console.log(chalk.green("💯  Project dependencies installed!"));
       console.log(
         chalk.cyanBright(
-          "👩‍💻  Happy hacking! Issues? Questions? https://github.com/PlayPickup/expugrea/issues  👨‍💻"
+          "👩‍💻  Happy hacking! Issues? Questions? https://github.com/PlayPickup/kickoff/issues  👨‍💻"
         )
       );
       console.log(`⚡️  To get started, type cd ${project.toString()}`);
