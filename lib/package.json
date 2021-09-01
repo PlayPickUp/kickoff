@@ -4,9 +4,12 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "yarn build:server && yarn build:client",
+    "build:client": "webpack --config webpack.client.config.prod.js",
+    "build:server": "webpack --config webpack.server.config.js",
     "start": "concurrently \"yarn start:server\" \"yarn start:client\"",
     "start:server": "nodemon -r dotenv/config ./src/server/server.ts",
-    "start:client": "webpack serve --config webpack.web.config.dev --open",
+    "start:client": "webpack serve --config webpack.client.config.dev --open",
     "test": "yarn test:typescript && yarn test:eslint",
     "test:eslint": "eslint .",
     "test:typescript": "tsc -p ./tsconfig.json --noEmit",
