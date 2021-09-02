@@ -1,0 +1,19 @@
+html,
+body {
+  position: relative;
+  background-color: #2c2933;
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
