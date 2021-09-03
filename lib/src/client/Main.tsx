@@ -4,7 +4,7 @@ import axios from "axios";
 import logo from "./logo.png";
 import "./styles.css";
 
-const App: React.FC = () => {
+const Main: React.FC = () => {
   useEffect(() => {
     const callBackend = async (): Promise<void> => {
       const response = await axios.get("/api/hello");
@@ -30,4 +30,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Main;
