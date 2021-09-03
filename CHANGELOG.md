@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/PlayPickup/kickoff/compare/v2.0.0...v2.0.1) (2021-09-03)
+
+
+### Bug Fixes
+
+* **eslint:** Add overrides to eslintrc.json, close [#11](https://github.com/PlayPickup/kickoff/issues/11) ([a1de127](https://github.com/PlayPickup/kickoff/commit/a1de127761de25cb1aeefb36066815f651251648))
+
 ## [2.0.1-next.1](https://github.com/PlayPickup/kickoff/compare/v2.0.0...v2.0.1-next.1) (2021-09-03)
 
 
