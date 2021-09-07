@@ -1,3 +1,15 @@
+# [2.1.0-next.1](https://github.com/PlayPickup/kickoff/compare/v2.0.1...v2.1.0-next.1) (2021-09-07)
+
+
+### Bug Fixes
+
+* **webpack:** Add historyApiFallback to webpack devServer, close [#21](https://github.com/PlayPickup/kickoff/issues/21) ([#22](https://github.com/PlayPickup/kickoff/issues/22)) ([908a392](https://github.com/PlayPickup/kickoff/commit/908a392f72c9af8c247a40a43af3cd344ee54935))
+
+
+### Features
+
+* **eslint:** Add jsx-a11y to lib, close [#13](https://github.com/PlayPickup/kickoff/issues/13) ([#23](https://github.com/PlayPickup/kickoff/issues/23)) ([c1e07c2](https://github.com/PlayPickup/kickoff/commit/c1e07c22e0adb17844f5ea5071ec28e0d4632044))
+
 ## [2.0.1](https://github.com/PlayPickup/kickoff/compare/v2.0.0...v2.0.1) (2021-09-03)
 
 
