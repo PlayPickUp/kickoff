@@ -1,4 +1,4 @@
-# [2.1.0-next.1](https://github.com/PlayPickup/kickoff/compare/v2.0.1...v2.1.0-next.1) (2021-09-07)
+# [2.1.0](https://github.com/PlayPickup/kickoff/compare/v2.0.1...v2.1.0) (2021-09-07)
 
 
 ### Bug Fixes
