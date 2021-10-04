@@ -14,7 +14,8 @@
     "test": "yarn test:typescript && yarn test:eslint",
     "test:eslint": "eslint .",
     "test:typescript": "tsc -p ./tsconfig.json --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "node ./scripts/postinstall.js"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
